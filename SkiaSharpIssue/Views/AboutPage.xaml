@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharpIssue.Views.AboutPage"
+             xmlns:vm="clr-namespace:SkiaSharpIssue.ViewModels"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <skia:SKCanvasView
+                    x:Name="instructionsGraphic"
+                    Margin="10,0,10,10"
+                    WidthRequest="300"
+                    HeightRequest="500"
+                    HorizontalOptions="CenterAndExpand"
+                    PaintSurface="OnCanvasViewPaintInstructions"
+                    VerticalOptions="CenterAndExpand">
+        </skia:SKCanvasView>
+    </Grid>
+
+</ContentPage>
